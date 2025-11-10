@@ -1,0 +1,35 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using System.Collections.Generic;
+@using System.Linq;
+
+@{
+    var content = (ContentModels.TeamSection)Model.Content;
+
+   
+}
+
+
+<div class="team-section">
+    <div class="container team-container">
+        <div class="team-headers">
+            <div class="team-title">
+                @content.TeamTitle
+            </div>
+            <h2>
+               @content.TeamSubTitle
+            </h2>
+        </div>
+        <div class="team-cards">
+            @for (var i = 0; i < content.TeamList.Count; i++)
+            {
+                var team = content.TeamList[i];
+                var cardClass = i < 3 ? "large" : "small";
+
+                <div class="card @cardClass">
+                    <partial name="Partials/blocklist/Components/TeamItem" model="team" />
+                </div>
+            }
+        </div>
+    </div>
+</div>

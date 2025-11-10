@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ClientsSection)Model.Content;
+}
+
+
+<div class="clients-section" style='background-image: url(@content.ClientsBgImg.Url());'>
+    <div class="container clients-container">
+        <h2 class="clients-header">@content.Title</h2>
+        <h2 class="clients-subheader">@content.SubTitle</h2>
+        <span class="clients-text">
+           @content.ClientsText
+        </span>
+        <a href="@content.ClientsLink.Url" class="btn-clients btn-client">@content.ClientsLink.Name</a>
+        @if (@content.ClientsImg != null)
+        {
+            <img class="clients-image" alt="Clients Image" src="@content.ClientsImg.Url()" />
+        }
+    </div>
+</div>

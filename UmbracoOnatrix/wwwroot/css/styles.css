@@ -1,0 +1,123 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    /* Typography */
+    --font-family: poppins, sans-serif;
+    --font-size-base: 14px;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    --font-black: 900;
+    /* Colors */
+    --white: #ffffff;
+    --black: #000000;
+    /* Text Colors */
+    --text-main: #4f5955;
+    --text-body: #535656;
+    --text-subcolor-3: #d9c3a9;
+    --text-subcolor-1: #f2eddc;
+    --text-heading: #4f5955;
+    /* Primary Colors */
+    --gray-b9b9b9: #b9b9b9;
+    --gray-bbbbbb: #bbbbbb;
+    --gray-ebebeb: #ebebeb;
+    --gray-999999: #999999;
+    --gray-c4c4c4: #c4c4c4;
+    --gray-e3e3e3: #e3e3e3;
+    --gray-note1: #9c9ea6;
+    --gray-4f5955: #4f5955;
+    /* Backgrounds */
+    --bg-main: #4f5955;
+    --bg-secondary: #f8f9fa;
+    --bg-dark: #2c3540;
+    --bg-darker: #1e2832;
+    /* Spacing (8px grid) */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--text-body);
+    background-color: var(--bg-primary);
+}
+
+/* Links */
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    font-weight: var(--font-semibold);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: var(--font-bold);
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: var(--font-bold);
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: var(--font-bold);
+}
+
+h4 {
+    font-size: 25px;
+    font-weight: var(--font-bold);
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: var(--font-semibold);
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: var(--font-regular);
+}
+
+.container {
+    width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 720px;
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 1240px;
+        padding: 0 var(--spacing-lg);
+    }
+}

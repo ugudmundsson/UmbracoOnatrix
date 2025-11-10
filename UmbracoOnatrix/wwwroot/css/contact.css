@@ -1,0 +1,135 @@
+/*---------------------- Let us section */
+
+
+
+.let-us-section {
+    padding-top: 4rem;
+}
+
+.let-us-container {
+    display: flex;
+}
+
+.let-us-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 80px;
+}
+
+.address-header {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    font-size: 14px;
+    font-weight: var(--font-semibold);
+    padding-top: 1.5rem;
+    padding-bottom: 0.2rem;
+    i
+
+{
+    color: var(--text-subcolor-3);
+}
+
+}
+
+.address-subheader {
+    padding-left: 23px;
+}
+
+.address-info {
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+
+/*-------------------------------- MAP */
+
+
+.map-section {
+    height: 748px;
+    background-color: var(--bg-main);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+    position: relative;
+}
+
+.map-callback-card {
+    background-color: var(--white);
+    z-index: 1;
+    width: 1170px;
+    height: 567px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -7rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.map-callback-header {
+    margin-top: 4rem;
+    font-size: 14px;
+    font-weight: var(--font-bold);
+    color: var(--text-subcolor-3);
+}
+
+.map-callback-text {
+    width: 475px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: var(--font-bold);
+    color: var(--text-body);
+    margin-bottom: 4rem;
+}
+
+.map-input-group {
+    display: flex;
+    flex-direction: column;
+    width: 409px;
+    height: 51px;
+    border: 1px solid var(--gray-ebebeb);
+    padding-left: 1rem;
+    margin-bottom: 1.5rem;
+    color: var(--gray-note1);
+    font-family: var(--font-family);
+    font-style: italic;
+    &::placeholder
+{
+    color: var(--gray-note1);
+}
+}
+
+.map-btn-callback {
+    height: 54px;
+    width: 140px;
+    background-color: var(--text-main);
+    color: var(--text-subcolor-1);
+    font-size: 16px;
+    font-weight: var(--font-bold);
+    border-radius: 3px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.map-callback-form {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+.map-input-select {
+    font-style: normal;
+    color: var(--text-body);
+    padding-top: 14px;
+}

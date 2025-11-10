@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.PartnersSection)Model.Content;
+
+
+    var partnerlist = content.PartnerIcons;
+
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current?.Root();
+
+    var contactpage = siteRoot?.Children<ContactPage>()?.FirstOrDefault();
+    var items = contactpage?.Children<PartnerDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+}
+
+
+
+<div class="partners-section">
+    <div class="container partners-container">
+        <div class="partners-logos">
+            @if (items.Any())
+            {
+                @foreach (var item in items)
+                {
+                    <div class="partner-logo">
+                        <img src="@(item.PartnerdetailThumb?.Url() ?? "~/")" alt="Partners" />
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Failed to load page</p>
+            }
+
+
+
+
+            @* @if (content.PartnerIcons != null && content.PartnerIcons.Any()) *@
+            @* { *@
+            @*     @for (var i = 0; i < partnerlist?.Count; i++) *@
+            @*     { *@
+
+            @*         var item = partnerlist[i].Content; *@
+
+            @*         var logo = item.Value<IPublishedContent>("partnersIcons")?.Url() ?? ""; *@
+            @*             <div class="partner-logo"> *@
+            @*                 <img src="@logo"/> *@
+            @*             </div> *@
+            @*     } *@
+            @* } *@
+        </div>
+    </div>
+</div>

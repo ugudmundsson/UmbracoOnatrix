@@ -1,0 +1,50 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ServiceSection)Model.Content;
+
+    var current = Umbraco.AssignedContentItem; 
+    var siteRoot = current?.Root();
+
+    var servicePage = siteRoot?.Children<ServicesPage>()?.FirstOrDefault();
+    var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+    var settings = Model.Settings as ContentModels.ServiceSettings;
+}
+
+<div style="background-color: @settings.ServiceBgColor;">
+    <div>
+        <div class="container services-container">
+            <div class="services-text">
+                @if (settings.ShowServiceLable)
+                { 
+                    <p class="services-header">@content.Title</p>
+                }
+                
+                <h2 class="services-subheader">
+                   @content.SubTitle
+                </h2>
+            </div>
+            <div class="services-list">
+            @if (items.Any())
+            {
+                @foreach (var item in items)
+                {
+                <div class="service-item">
+                    <h5 class="service-card-header">@item.Name</h5>
+                    <img src="@(item.ServiceDetailThumb?.Url() ?? "~/")" alt="Risk" />
+                    <div class="service-text-wrapper">
+                        <p>
+                          @item.ServiceDetailExcerpt
+                        </p>
+                    </div>
+                </div>
+                }
+            }
+            else
+            {
+                <p>Failed to load page</p>
+            }
+            </div>
+        </div>
+    </div>
+</div>

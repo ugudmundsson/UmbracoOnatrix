@@ -1,0 +1,90 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.CallbackSection)Model.Content;
+}
+
+
+<div class="about-section container">
+    <div class="about-container">
+        <div class="about-text">
+            <h3 class="about-header">ABOUT US</h3>
+            <h2 class="about-subheader">We have 40 years experience</h2>
+            <p class="about-paragraph">
+                “We have over 25 years of experience providing expert financial
+                advice to both businesses and individuals.”
+            </p>
+            <p class="about-paragraph2">
+                Dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum. Sed ut perspiciatis unde omnis iste natus error sit
+                voluptatem accusantium.
+            </p>
+            @if (@content.CeoImg != null)
+            {
+                <img src="@content.CeoImg.Url()"
+                     alt="Signature"
+                     class="signature" />
+            }
+            
+            <p>Tina Fox - CEO & Founder</p>
+        </div>
+        <div class="about-callback">
+            <div class="callback-header">
+                <p>Request a call back</p>
+            </div>
+            <div class="callback-text">
+                <p>
+                    Dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                    fugiat nulla pariatur excepteur sint occaecat
+                </p>
+            </div>
+            <form class="callback-form">
+                <div>
+                    <label for="name"></label>
+                    <input class="input-group"
+                           type="text"
+                           id="name"
+                           name="name"
+                           placeholder="Name" />
+                </div>
+                <div>
+                    <label for="email"></label>
+                    <input class="input-group"
+                           type="email"
+                           id="email"
+                           name="email"
+                           placeholder="Email address" />
+                </div>
+                <div>
+                    <label for="phone"></label>
+                    <input class="input-group"
+                           type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="Phone" />
+                </div>
+                <div>
+                    <label for="dropdown"></label>
+                    <select class="input-group input-select"
+                            id="dropdown"
+                            name="dropdown">
+                        <option class="input-group" value="" disabled></option>
+                        <option selected value="financial-consulting">
+                            Financial consulting
+                        </option>
+                        <option value="investment-planning">
+                            Investment planning
+                        </option>
+                        <option value="tax-advisory">Tax advisory</option>
+                        <option value="retirement-planning">
+                            Retirement planning
+                        </option>
+                    </select>
+                </div>
+                <button class="btn-callback">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

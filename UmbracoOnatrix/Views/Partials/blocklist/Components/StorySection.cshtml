@@ -1,0 +1,39 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.StorySection)Model.Content;
+
+}
+
+
+<div class="story-section" style='background-image: url(@content.StoryBgImg.Url());'>
+    <div class="container story-container story-grid" >
+        <div class="story-text">
+            <p class="story-header">@content.Title</p>
+            <h2 class="story-subheader">@content.SubTitle</h2>
+        </div>
+        <div class="story-video-image">
+            @if (@content.StoryImg != null)
+            {
+                <img src="@content.StoryImg.Url()" alt="Story Image" class="story-img" />
+            }
+        </div>
+        <div class="story-numbers">
+            <div class="story-number-box">
+                <p class="story-number">689</p>
+                <span class="story-description">More than 100 customers has been served</span>
+            </div>
+            <div class="story-number-box">
+                <p class="story-number">370</p>
+                <span class="story-description">More than 370 projects has been completed</span>
+            </div>
+            <div class="story-number-box">
+                <p class="story-number">125</p>
+                <span class="story-description">
+                    More than 125 branches has been established in Europe and
+                    America
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

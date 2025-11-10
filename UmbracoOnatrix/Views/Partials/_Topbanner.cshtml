@@ -1,0 +1,26 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    var rootcontent = Umbraco.ContentAtRoot();
+    var sitesettings = rootcontent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contactaddress = sitesettings?.ContactAddress;
+}
+
+
+<div class="top-banner">
+    <div class="container banner-items">
+        <div>
+            <span>@contactaddress</span>
+        </div>
+        <div class="social-icons">
+            <div class="gray-line"></div>
+            <i class="fa-brands fa-facebook-f"></i>
+            <div class="gray-line"></div>
+            <i class="fa-brands fa-twitter"></i>
+            <div class="gray-line"></div>
+            <i class="fa-brands fa-linkedin-in"></i>
+            <div class="gray-line"></div>
+        </div>
+    </div>
+</div>

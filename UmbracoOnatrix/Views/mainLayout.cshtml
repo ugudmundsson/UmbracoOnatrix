@@ -1,0 +1,29 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@Umbraco.AssignedContentItem.Name</title>
+    <link rel="stylesheet" href="/css/styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/about.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/css/contact.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <link rel="icon"       href="/media/ty4hzdvm/symbol.svg" sizes="32x32" type="image/svg+xml" />
+</head>
+
+<body>
+    @await Html.PartialAsync("_Topbanner")
+    @await Html.PartialAsync("_Header")
+    @RenderBody()
+    @await Html.PartialAsync("_Footer")
+</body>
+
+</html>

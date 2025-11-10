@@ -1,0 +1,7 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<AboutPage>
+@{
+	Layout = "mainLayout.cshtml";
+}
+@await Html.PartialAsync("_Breadcrumber")
+@Html.GetBlockListHtml(Model.Sections)

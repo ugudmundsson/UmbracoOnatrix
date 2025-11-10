@@ -1,0 +1,71 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.MapSection)Model.Content;
+}
+
+<div class="map-section" style='background-image: url(@content.MapImg.Url());'>
+    <div>
+        <div class="map-callback-card">
+            <div class="map-callback-header">
+                <p>Request a call back</p>
+            </div>
+            <div class="map-callback-text">
+                <p>
+                    Let us know about your
+                    next project
+                </p>
+            </div>
+            <form class="map-callback-form">
+                <div>
+                    <div>
+                        <label for="name"></label>
+                        <input class="map-input-group"
+                               type="text"
+                               id="name"
+                               name="name"
+                               placeholder="Name" />
+                    </div>
+                    <div>
+                        <label for="email"></label>
+                    <input class="map-input-group"
+                               type="email"
+                               id="email"
+                               name="email"
+                               placeholder="Email address" />
+                    </div>
+                </div>
+                <div>
+                <div>
+                    <label for="phone"></label>
+                <input class="map-input-group"
+                           type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="Phone" />
+                </div>
+                    <div>
+                        <label for="dropdown"></label>
+                    <select class="map-input-group input-select"
+                                id="dropdown"
+                                name="dropdown">
+                        <option class="map-input-group" value="" disabled></option>
+                            <option selected value="financial-consulting">
+                                Financial consulting
+                            </option>
+                            <option value="investment-planning">
+                                Investment planning
+                            </option>
+                            <option value="tax-advisory">Tax advisory</option>
+                            <option value="retirement-planning">
+                                Retirement planning
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                
+            </form>
+            <button class="map-btn-callback">Submit</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.TeamItem)Model.Content;
+
+}
+
+
+<div class="team-card-large">
+    <img class="card-image" src="@content.TeamThumb.Url()" />
+    <div class="card-info">
+        <div class="teamname">@content.TeamName</div>
+        <div class="teamrole">@content.TeamRole</div>
+    </div>
+</div>

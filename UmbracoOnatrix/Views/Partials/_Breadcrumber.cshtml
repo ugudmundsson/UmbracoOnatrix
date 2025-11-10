@@ -1,0 +1,44 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IPageBanner>
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedUrlProvider PublishedUrlProvider
+@*
+
+*@
+
+@{
+    var selection = Model.Ancestors(PublishedContentCache, DocumentNavigationQueryService).ToArray(); 
+    var rootcontent = Umbraco.ContentAtRoot();
+    var sitesettings = rootcontent.OfType<SiteSettings>().FirstOrDefault();
+
+    var breadBG = sitesettings?.BreadcrumbImg;
+
+}
+
+@if (selection?.Length > 0)
+{
+    <div class="breadcrumb-section">
+        <img class="breadcrumb-image" src="@breadBG.Url()" />
+        <div class="container breadcrumb-header">
+                <div>
+                     <h1>@Model.PagebannerTitle</h1>
+                </div>
+                <div>
+                    <ul class="breadcrumb">
+                        @* For each page in the ancestors collection which have been ordered by Level (so we start with the highest top node first) *@
+                        @foreach (var item in selection.OrderBy(x => x.Level))
+                        {
+                            <li><a href="@item.Url(PublishedUrlProvider)">@item.Name</a> <span class="divider">></span></li>
+                        }
+
+                        @* Display the current page as the last item in the list *@
+                        <li class="active">@Model.Name</li>
+                    </ul>
+                </div>
+        </div>
+    </div>
+}

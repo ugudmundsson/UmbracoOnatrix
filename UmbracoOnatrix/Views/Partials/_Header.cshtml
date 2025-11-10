@@ -1,0 +1,51 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.PublishedContent
+@using Umbraco.Cms.Core.PublishedCache
+@using Umbraco.Cms.Core.Routing
+@using Umbraco.Cms.Core.Services.Navigation
+
+
+
+
+@inject IVariationContextAccessor VariationContextAccessor
+@inject IPublishedContentCache PublishedContentCache
+@inject IDocumentNavigationQueryService DocumentNavigationQueryService
+@inject IPublishedValueFallback PublishedValueFallback
+@inject IPublishedUrlProvider PublishedUrlProvider
+
+
+
+@{
+
+    var selection = Model.Root().Children().Where(x => x.IsVisible(PublishedValueFallback)).ToArray(); 
+
+    var rootcontent = Umbraco.ContentAtRoot();
+
+    var sitesettings = rootcontent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contactaddress = sitesettings?.ContactAddress;
+    var logo = sitesettings?.SiteLogo;
+}
+
+@if (selection?.Length > 0)
+{
+    <div class="top-nav">
+        <div class="container nav-links">
+            <a href="/" class="logo">
+                    <img src="@logo.Url()" />
+            </a>
+            <div class="nav-links">
+                @foreach (var item in selection)
+                {
+
+                <a class="btn-alink" href="@item.Url(PublishedUrlProvider)">@item.Name</a>
+                   
+                }
+            </div>
+            <div class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+
+    </div>
+}

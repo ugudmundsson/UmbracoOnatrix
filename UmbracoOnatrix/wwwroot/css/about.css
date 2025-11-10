@@ -1,0 +1,180 @@
+﻿/*---------------------- About main content section */
+
+.main-about-section {
+    background-color: #ffffff;
+}
+
+.main-about {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    padding: 7rem 0;
+}
+
+.main-about-portrait {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-size: 16px;
+    color: var(--text-body);
+    font-style: italic;
+    gap: .5rem;
+}
+
+.main-about-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+    max-width: 600px;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.main-about-title {
+    margin-bottom: 1.5rem;
+    display: flex;
+    max-width: 600px;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/*---------------------- Review section */
+
+.reviews-section {
+    background-color: #f7f7f7;
+}
+
+.reviews-header {
+    margin-top: 6rem;
+    color: var(--text-subcolor-3);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-bold);
+}
+
+.reviews-sub-header {
+    max-width: 343px;
+    font-size: 40px;
+    font-weight: var(--font-bold);
+    color: var(--text-main);
+    
+}
+.reviews-text {
+    color: var(--gray-999999);
+    max-width: 630px;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.reviewer-company {
+    font-size: 20px;
+    font-style: italic; 
+    font-weight: 500;
+
+}
+
+.reviews-container {
+    display: flex;
+    gap: 3rem;
+    height: 511px;
+}
+
+.reviews-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+}
+
+.reviews-image {
+    width: 100%;
+    max-width: 500px;
+}
+
+/*---------------------- Team section */
+
+.team-section {
+    margin-bottom: 5rem;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.team-title {
+    color: var(--text-subcolor-3);
+    font-weight: bold;
+}
+
+.team-headers {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 501px;
+    margin-top: 5rem;
+}
+
+.card-image {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.team-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.card.large {
+    width: 370px;
+    height: 462px;
+    border: 2px solid #f3f3f3;
+    & .card-info {
+        padding: 15px 0px 0px 30px;
+                 }
+    & .teamname {
+        font-size: 22px;
+        font-weight: var(--font-semibold);
+    }
+    & .teamrole {
+        font-size: 13px;
+        color: var(--gray-note1);
+    }
+}
+
+.card.small {
+    width: 270px;
+    height: 356px;
+    border: 2px solid #f3f3f3;
+    & .card-info{
+    padding: 10px 0px 0px 30px;
+                }
+
+    & .teamname {
+        font-size: 20px;
+        font-weight: var(--font-semibold);
+    }
+
+    & .teamrole {
+        font-size: 13px;
+        color: var(--gray-note1);
+    }
+}
+
+.card:nth-child(4) {
+    grid-column: 1;
+    
+}
+
+.card.small {
+    grid-column: span 1;
+}
+
+

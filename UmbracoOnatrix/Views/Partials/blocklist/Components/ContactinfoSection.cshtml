@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.ContactInfoSection)Model.Content;
+
+    var rootcontent = Umbraco.ContentAtRoot();
+
+    var sitesettings = rootcontent.OfType<SiteSettings>().FirstOrDefault();
+
+    var contactaddress = sitesettings?.ContactAddress;
+    var contactphone = sitesettings?.ContactPhone;
+    var contactmail = sitesettings?.ContactMail;
+    var settings = Model.Settings as ContentModels.ContactSettings;
+}
+
+
+<div class="let-us-section" style="background-color: @settings.ShowBgColor;">
+    <div class="container let-us-container">
+        <img src="@content.ContactGuy?.Url()" alt="Contact Guy" />
+        <div class="let-us-text">
+            <div>
+                <h2>Let us know about<br> your next project</h2>
+            </div>
+            <div>
+                <div class="address-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Office location</p>
+                </div>
+                <p class="address-subheader">@contactaddress</p>
+            </div>
+            <div>
+                <div class="address-header">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>Office location</p>
+                </div>
+                <p class="address-subheader">@contactphone</p>
+            </div>
+            <div>
+                <div class="address-header">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Office location</p>
+                </div>
+                <p class="address-subheader">@contactmail</p>
+            </div>
+        </div>
+    </div>
+</div>
