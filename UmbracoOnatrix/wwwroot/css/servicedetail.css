@@ -1,0 +1,162 @@
+.aside-grayline {
+    height: auto;
+    border: 1px solid var( --gray-e3e3e3);
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.aside-box {
+    max-width: 348px;
+    height: 2032px;
+}
+
+.servicedetail-container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+
+
+
+
+
+
+/*--------------------aside card*/
+
+.aside-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+}
+
+.card-img {
+    max-width: 300px;
+}
+
+.card-text {
+    display: flex;
+    text-align: left;
+    max-width: 300px;
+}
+
+.mail-box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px 5px 20px;
+    margin-top: 2rem;
+    text-align: left;
+    gap: 20px;
+    background-color: var(--text-main);
+    width: 305px;
+    height: 233px;
+    color: var(--text-subcolor-1)
+}
+
+.email-box-input {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    height: 52px;
+    border: 1px solid var(--gray-ebebeb);
+    padding-left: 1rem;
+    color: var(--gray-note1);
+    font-family: var(--font-family);
+    font-style: italic;
+    &::placeholder
+{
+    color: var(--gray-note1);
+}
+}
+
+.form-input {
+    position: relative;
+}
+.input-box {
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    right: 10%;
+    color: var(--gray-note1);
+}
+
+.bg-icon {
+    position: absolute;
+    color: var(--text-sub3);
+    opacity: 0.2;
+    font-size: 170px;
+    z-index: 0;
+    transform: rotate(-15deg);
+    right: -15%;
+    bottom: -25%;
+}
+/*---------------------------BODY */
+.rte-text h4 {
+    padding: .5rem 0 .5rem 0;
+}
+
+.rte-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    line-height: 24px;
+}
+
+.rte-ul {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: .5rem 0 .5rem 1rem;
+}
+
+    .rte-ul li::marker {
+        color: var(--text-subcolor-3)
+    }
+
+
+/*-------------------------QUESTION FORM*/
+
+.input-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.question-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+}
+
+.question-input {
+    width: 570px;
+    height: 52px;
+    padding-left: 15px;
+    font-style: italic;
+    color: var(--gray-e3e3e3);
+    border: 1px solid var(--gray-ebebeb);
+}
+
+    .question-input:focus {
+        outline: 1px solid var(--gray-ebebeb);
+    }
+
+
+.question-text-area {
+    width: 1173px;
+    height: 175px;
+    font-style: italic;
+    color: var(--gray-e3e3e3);
+    padding-left: 15px;
+    padding-top: 15px;
+    border: 1px solid var(--gray-ebebeb);
+}
+
+    .question-text-area:focus {
+        outline: 1px solid var(--gray-ebebeb);
+    }

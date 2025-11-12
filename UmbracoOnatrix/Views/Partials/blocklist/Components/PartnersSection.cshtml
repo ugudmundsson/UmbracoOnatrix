@@ -31,23 +31,6 @@
             {
                 <p>Failed to load page</p>
             }
-
-
-
-
-            @* @if (content.PartnerIcons != null && content.PartnerIcons.Any()) *@
-            @* { *@
-            @*     @for (var i = 0; i < partnerlist?.Count; i++) *@
-            @*     { *@
-
-            @*         var item = partnerlist[i].Content; *@
-
-            @*         var logo = item.Value<IPublishedContent>("partnersIcons")?.Url() ?? ""; *@
-            @*             <div class="partner-logo"> *@
-            @*                 <img src="@logo"/> *@
-            @*             </div> *@
-            @*     } *@
-            @* } *@
         </div>
     </div>
 </div>

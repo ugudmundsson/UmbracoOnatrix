@@ -1,5 +1,39 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
-@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
 @{
-	Layout = null;
+	Layout = "mainLayout.cshtml";
 }
+@await Html.PartialAsync("_Breadcrumber")
+<section>
+	<div class="container ">
+		<div class="servicedetail-container">
+			<div class="aside-box">
+				@Html.GetBlockListHtml(Model.ServiceDetailAsides)
+			</div>
+
+			<div class="aside-grayline"></div>
+
+			<div class="rte-text">
+				@Html.Raw(Model.ServiceDetailBody)
+			</div>
+		</div>
+		<div>
+			<form class="question-box">
+				<h4>Have a question ?</h4>
+				<div class="input-fields">
+					<input type="text" placeholder="Name" class="question-input" />
+					<input type="email" placeholder="Email" class="question-input" />
+				</div>
+				<div>
+					<textarea placeholder="Question" style="resize: none;" class="question-text-area"></textarea>
+					<button class="btn-hero">Submit</button>
+				</div>
+			</form>
+			
+		</div>
+	</div>
+
+	@Html.GetBlockListHtml(Model.DetailSection)
+</section>
+
+

@@ -30,19 +30,22 @@
                 @foreach (var item in items)
                 {
                 <div class="service-item">
-                    <h5 class="service-card-header">@item.Name</h5>
-                    <img src="@(item.ServiceDetailThumb?.Url() ?? "~/")" alt="Risk" />
-                    <div class="service-text-wrapper">
-                        <p>
-                          @item.ServiceDetailExcerpt
-                        </p>
-                    </div>
+                    <a href="@item.Url()">
+                        <h5 class="service-card-header">@item.Name</h5>
+                        <img src="@(item.ServiceDetailThumb?.Url() ?? "~/")" alt="ServicesDetail" />
+                        <div class="service-text-wrapper">
+                            <p>
+                              @item.ServiceDetailExcerpt
+                            </p>
+                            
+                        </div>
+                    </a>
                 </div>
                 }
             }
             else
             {
-                <p>Failed to load page</p>
+                <p>Failed to load section</p>
             }
             </div>
         </div>

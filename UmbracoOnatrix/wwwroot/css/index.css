@@ -316,6 +316,7 @@
 
 .service-item {
     background-color: var(--white);
+    border: solid 1px #efefef;
     width: 370px;
     height: 423px;
     transition: all 0.3s ease;
